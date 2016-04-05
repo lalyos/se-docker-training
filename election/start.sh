@@ -10,4 +10,5 @@ ${CUSTOM_BODY}
 </html>
 EOF
 
-nginx -g "daemon off;"
+nginx
+tail -f /var/log/nginx/access.log
