@@ -59,10 +59,10 @@ docker run it alpine sh
 # detach
 CTRL-P followed by CTRL-Q
 
-# isnpect metadata:
+# inspect metadata:
 docker insect $(docker ps -ql)
 
-# whats runninig in conatiener:
+# whats runninig in container:
 docker top
 
 # attach back to latest:
