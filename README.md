@@ -176,21 +176,40 @@ docker logs -f election
 refresh in the browser: http://b2d:8080, and whach the console.
 
 
-## exec vs ssh
 
 ## volumes
-- volumes
+
+
+
+
 - (volume drivers)
 
 ## Service discovery
 
+Start autoregistration magic:
+```
+# start consul
+docker run -d \
+  -p 8500:8500 \
+  -p 0.0.0.0:53:8600/udp \
+  gliderlabs/consul-server:0.5\
+    -bootstrap  --advertise 192.168.59.103  -recursor 8.8.8.8
+
+# start registrator
+docker run -d \
+  -v /var/run/docker.sock:/tmp/docker.sock \
+  --privileged gliderlabs/registrator:v5 \
+    consul://192.168.59.103:8500
+```
+
+Start a container wich get registered:
+
+```
+docker run -d \
+   -p 80:80 -e SERVICE_NAME=web nginx
+```
 ## docker-compose
 
 
 ##
 
-Usage:
-```
-docker run -d \
-  -e PRESIDENT=$USER -p 8080:80  lalyos/elec:v2
-```
