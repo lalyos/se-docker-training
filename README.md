@@ -161,6 +161,21 @@ Start a container priniting the date each second:
 ```
 docker run -d alpine sh -c 'while true; do date; sleep 1; done'
 ```
+
+Exercice: Make docker logs useful with the election image
+
+Make ngingx run in the background again, and print the access log to the stdout.
+(Solution is tagged: git checkout logging)
+
+Build and run the new image
+```
+docker run -d --name election -p 8080:80 elec
+docker logs -f election
+```
+
+refresh in the browser: http://b2d:8080, and whach the console.
+
+
 ## exec vs ssh
 
 ## volumes
