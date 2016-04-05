@@ -1,0 +1,25 @@
+consul:
+    privileged: true
+    volumes:
+        - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+        - "192.168.59.103:53:8600/udp"
+        - "8400:8400"
+        - "8500:8500"
+    hostname: node1
+    image: gliderlabs/consul-server:0.5
+    command: -bootstrap -advertise 192.168.59.103  -recursor 8.8.8.8
+
+registrator:
+    privileged: true
+    volumes:
+        - "/var/run/docker.sock:/tmp/docker.sock"
+    image: gliderlabs/registrator:v5
+    command: consul://192.168.59.103:8500
+web:
+    image: nginx
+    environment:
+        - SERVICE_NAME=web
+    ports:
+        - 80:80
+
