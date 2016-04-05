@@ -155,6 +155,12 @@ docker run -d election nginx -g 'daemon off;'
 # day 2
 
 ## docker log
+
+Start a container priniting the date each second:
+
+```
+docker run -d alpine sh -c 'while true; do date; sleep 1; done'
+```
 ## exec vs ssh
 
 ## volumes
