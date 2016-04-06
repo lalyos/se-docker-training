@@ -52,7 +52,7 @@ might want to sell (i mean make it opensource available to others) the 'website 
 # try diff flavors of linux
 docker run -it debian
 docker run -it centos
-docker run it alpine sh
+docker run -it alpine sh
 
 # docker pull is optional
 
