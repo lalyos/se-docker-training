@@ -210,6 +210,8 @@ docker run -d \
 ```
 ## docker-compose
 
-
-##
+Lajos didnt tell us that its that easy:
+```
+docker-compose up -d
+```
 
