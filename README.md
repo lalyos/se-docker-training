@@ -22,7 +22,7 @@ brew install docker
 Create the VM with enough memory/disk:
 ```
 ## boot2docker
-boot2docker -m 8192 -s 3000
+boot2docker init -m 8192 -s 3000
 
 ## docker-machine
 docker-machine create --driver virtualbox --virtualbox-memory 8192 --virtualbox-disk-size 30000 docker-training
