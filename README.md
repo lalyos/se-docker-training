@@ -10,7 +10,7 @@ If you are using osx, You have to create a VirtualBox VM which will run a
 docker tailored tiny core linux. You can create it with either `boot2docker` or `docker-machine`
 (the use the same boot disk anyway)
 
-Most of the time the 2 commands `boot2docker` and `docker-machine` are interchangebla.
+Most of the time the 2 commands `boot2docker` and `docker-machine` are interchangeable.
 
 ## OSX install docker - cli way
 
